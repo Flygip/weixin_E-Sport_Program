@@ -1,0 +1,92 @@
+<!--miniprogram/pages/my_publish/my_publish.wxml-->
+
+<view class='top'></view>
+<view>
+  <view class='top-navigation'>
+    <view class='{{open?["appoint"]:["else-appoint"]}}' bindtap='appoint'>我的招募</view>
+    <view class='{{open1?["match"]:["else-match"]}}' bindtap='match'>我的比赛</view>
+    <view class='{{open2?["state"]:["else-state"]}}' bindtap='state'>我的动态</view>
+  </view>
+  <view class="tips" wx:if="{{bool_show}}">
+    <text>还未添加发布，去添加吧！</text>
+  </view>
+  <view class='content' wx:if="{{item_show0}}">
+    <scroll-view scroll-y="true" style='height:{{item_height}}px'>
+      <block wx:for='{{find_partner}}'>
+        <view class='per-people'>
+          <!-- 这里的_openid为每个展示用户的 -->
+          <view class='img-box'>
+            <image class='img' src='{{item.avatarUrl}}'></image>
+          </view>
+          <view class='text'>
+            <text class='nike-name'>{{item.nickName}}</text>
+            <text class='type'>#{{item.sports_type}}</text>
+          </view>
+          <!-- <view class='delete-people'>
+            <button type='warn' size='mini' bindtap='delete_people' id='{{item._id}}'>删除</button>
+          </view> -->
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <view class='content' wx:if="{{item_show1}}">
+    <scroll-view scroll-y="true" style='height:{{item_height}}px'>
+      <block wx:for='{{match}}'>
+        <view class='per-people'>
+          <!-- 这里的_openid为每个展示用户的 -->
+          <view class='img-box'>
+            <image class='img' mode='aspectFill' src='{{item.uploadImg}}'></image>
+          </view>
+          <view class='text'>
+            <text class='nike-name'>{{item.type}}</text>
+          </view>
+          <view class='view-people' bindtap='matchDetail' id='{{item._id}}'>
+            <button type='primary' size='mini'>查看</button>
+          </view>
+          <view class='delete-people'>
+            <button type='warn' size='mini' bindtap='delete_match' id='{{item._id}}'>删除</button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <view class='content' wx:if="{{item_show2}}">
+    <scroll-view scroll-y="true" style='height:{{item_height}}px'>
+      <block wx:for='{{state}}'>
+        <view class='per-people'>
+          <!-- 这里的_openid为每个展示用户的 -->
+          <view class='img-box'>
+            <image class='img' src='{{item.avatarUrl}}'></image>
+          </view>
+          <view class='text'>
+            <text class='nike-name'>{{item.nickName}}</text>
+            <text class='publish-time'>{{item.publish_time}}</text>
+          </view>
+          <view class='view-people' bindtap='userDetail' id='{{item._id}}'>
+            <button type='primary' size='mini'>查看</button>
+          </view>
+          <view class='delete-people' bindtap='delete_state' id='{{item._id}}'>
+            <button type='warn' size='mini'>删除</button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showMatch}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showMatch}}">
+  <view class='match-img'>
+    <image mode='aspectFill' src="{{match_img}}" />
+  </view>
+  <view class='detail-box'>
+     <text class="text1" style='color:black;font-weight:bold;'>#{{sports_type}}#</text>
+    <text class="text1">*负责人：{{nickName}}</text>
+    <text class="text1" style='color:red'>*学校：{{school}}</text>
+    <text class="text1">*QQ：{{tele}}</text>
+    <text class="text1" style='color:red'>*时间：{{date}}-{{time}}</text>
+    <view class='text1'>*人数：{{now_match_num}}/{{match_num}}</view>
+  </view>
+  <view bindtap="cancle" class="ok">好的</view>
+</view>

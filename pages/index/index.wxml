@@ -1,0 +1,13 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="button-box">
+  <view>
+    <image src='../image/logo.gif'></image>
+  </view>
+  <view class='text'>
+    <text style='font-size:100%;'>静止便是死亡，只有运动才能敲开永生的大门。——泰戈尔</text>
+    <text style='color:#00ced1; font-size:130%; margin-top:20px;'>开启你的运动之旅吧！</text>
+  </view>
+  <view>
+    <button class='button' plain open-type='getUserInfo' bindgetuserinfo='getUserInfo'>{{button_text}}</button>
+  </view>
+</view>

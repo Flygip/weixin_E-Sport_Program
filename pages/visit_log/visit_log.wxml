@@ -1,0 +1,47 @@
+<!--miniprogram/pages/visit_log/visit_log.wxml-->
+<view class='top'></view>
+<view>
+  <view class='top-navigation'>
+    <view class='{{open?["recent"]:["else-recent"]}}' bindtap='appointment_record'>预约记录</view>
+    <view class='{{open1?["all"]:"else-all"}}' bindtap='likes_record'>我的关注</view>
+  </view>
+  <view class="tips" wx:if="{{bool_show}}">
+    <text>还未添加，去添加吧！</text>
+  </view>
+  <view class='content' wx:if="{{item_show0}}">
+    <block wx:for='{{sports}}'>
+      <view class='per-people'>
+        <!-- 这里的_openid为每个展示用户的 -->
+        <view class='img-box'>
+          <image class='img' src='{{item.avatarUrl}}'></image>
+        </view>
+  
+          <view class='text'>
+            <text class='nike-name'>{{item.nickName}}</text>
+          </view>
+        <view class='delete-people'>
+          <button type='warn' size='mini' bindtap='delete_people' id='{{item._id}}'>删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='content' wx:if="{{item_show1}}">
+    <block wx:for='{{likes}}'>
+      <view class='per-people'>
+        <!-- 这里的_openid为每个展示用户的 -->
+        <view class='img-box'>
+          <image class='img' src='{{item.avatarUrl}}'></image>
+        </view>
+          <view class='text'>
+            <text class='nike-name'>{{item.nickName}}</text>
+          </view>
+        <view class='view-people' bindtap='userDetail' id='{{item._id}}'>
+          <button type='primary' size='mini'>查看</button>
+        </view>
+        <view class='delete-people' id='{{item._id}}' bindtap='delete_like_people'>
+          <button type='warn' size='mini'>删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

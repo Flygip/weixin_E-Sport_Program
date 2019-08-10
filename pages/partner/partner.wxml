@@ -1,0 +1,69 @@
+<!--miniprogram/pages/center/center.wxml-->
+<view>
+  <view class="page-top {{open?['c-state','cover']:''}}">
+    <!-- <image bindtap='classify' src='{{image}}'></image> -->
+    <view class='top-choice'>
+      <view class='to-classify' style='color:{{color2}}' bindtap='classify'>
+        <text>筛选</text>
+        <image wx:if="{{classifyImage}}" src='{{classifyImage}}'></image>
+      </view>
+      <view class='all-product' style='color:{{color1}}' bindtap='toShowAll'>
+        <text>全部</text>
+        <image wx:if="{{allImage}}" src='{{allImage}}'></image>
+      </view>
+    </view>
+    <view class='content'>
+      <block wx:for='{{user}}'>
+        <view class='per-people' bindtap='userDetail' id='{{item._openid}}'>   
+        <!-- 这里的_openid为每个展示用户的 -->
+          <view class='img-box'>
+            <image class='img' src='{{item.avatarUrl}}'></image>
+            <text>时间:{{item.date}}-{{item.time}}</text>
+          </view>
+          <view class='introduce_text'>
+            <view class='text'>
+              <text class='nike-name'>{{item.nickName}}</text>
+              <text class='type'>#{{item.type}}</text>
+              <text class='label'>个签:{{item.label}}</text>
+            </view>
+          </view>
+          <view class='people-label'>浏览| {{item.glance}}</view>
+        </view>
+      </block>
+    </view>
+    <tabBar partner_nav_img="{{partner_nav_img}}" sports_nav_img="{{sports_nav_img}}"></tabBar>
+  </view>
+</view>
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="page-slidebar">
+    <view class="page-content">
+      <view class='piker-box'>
+        <picker class='to-classify-picker0' bindchange='bindClassifyPiker0' value='{{index}}' range='{{schoolArray}}'>
+          <view class='piker'>学校：{{schoolArray[index0]}}</view>
+        </picker>
+      </view>
+      <view class='piker-box'>
+        <picker class='to-classify-picker1' bindchange='bindClassifyPiker1' value='{{index}}' range='{{typeArray}}'>
+          <view class='piker'>项目：{{typeArray[index1]}}</view>
+        </picker>
+      </view>
+      <view class='piker-box'>
+        <picker class='to-classify-picker' bindchange='bindClassifyPiker2' value='{{index}}' range='{{dateArray}}'>
+          <view class='piker'>日期：{{dateArray[index2]}}</view>
+        </picker>
+      </view>
+      <view class='piker-box'>
+        <picker class='to-classify-picker' bindchange='bindClassifyPiker3' value='{{index}}' range='{{sexArray}}'>
+          <view class='piker'>性别：{{sexArray[index3]}}</view>
+        </picker>
+      </view>
+      <view class='submit'>
+        <button plain='true' class='submit-button' bindtap='submit'>提交</button>
+      </view>
+    </view>
+  </view>
+  <!-- <view bindtap="confirm" class="ok">好的</view> -->
+</view>

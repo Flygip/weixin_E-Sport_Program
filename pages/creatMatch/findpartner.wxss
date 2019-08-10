@@ -1,0 +1,110 @@
+/* miniprogram/pages/findpartner/findpartner.wxss */
+page {
+    height: 100%;
+    width: 100%;
+    font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yachei',
+                 sans-serif;
+}
+.whole-page{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.bg-img-box{
+  width: 100%;
+  height: 180px;
+}
+.bg-img-box image{
+  width: 100%;
+  height: 100%;
+}
+.bottom-page{
+  position: absolute;
+  top: 150px;
+  width: 92%;
+  /* margin: auto 10px; */
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px gainsboro;
+}
+.add-photo-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.add-photo-box image{
+  height: 180rpx;
+  width: 180rpx;
+  border: 1px solid #f4f4f4;
+  box-shadow: 0px 0px 8px 2px #f4f4f4;
+}
+.tui-picker-content{
+  display : flex;
+  margin : 30px;
+  justify-content: center;
+}
+.piker-box{
+  border-bottom: 1px solid orange;
+}
+.tui-picker-detail{
+  background-color: #fff;
+  text-align: center;
+}
+.textInput{
+  background-color:white;
+  border-bottom: 1px solid orange;
+  width : 200px;
+  confirm-type:done;
+}
+.button{
+  margin:30px;
+  color:white;
+  width: 200px;
+  margin-bottom: 30px;
+}
+/* .submit{
+  margin-top: 70rpx;
+  display: flex;
+  justify-content: center;
+}
+.submit button{
+  position: fixed;
+  bottom: 0rpx;
+  color: white;
+  border-color: orange;
+  width: 90%;
+} */
+.all-input{
+  margin-top: 50rpx;
+}
+.input-box{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.input-box text{
+  font-weight: bold;
+  margin-left: 40rpx;
+}
+/* 个性签名输入框 */
+.textarea-box{
+  /* display: flex; */
+  margin-top: 60rpx;
+}
+.textarea-box textarea{
+  margin-top: 20rpx;
+  margin-bottom: 120rpx;
+  justify-content: center;
+  width: 85%;
+  margin-left: 60rpx;
+  border: 1px solid gray;
+}
+.textarea-box text{
+  font-weight: bold;
+  margin-left: 60rpx;
+}

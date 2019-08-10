@@ -1,0 +1,64 @@
+<!--miniprogram/pages/dealregist/dealregist.wxml-->
+<view class='whole-page'>
+  <view class='bg-img-box'>
+    <image src='../image/partner_back_img.jpg'></image>
+  </view>
+  <view class='hole-page'>
+    <!-- <view class='add-photo-box'>
+      <button bindtap='loadImg' type='{{add_photo_button}}' class='add-photo-button'>{{add_photo_text}}</button>
+      <image src='{{upLoadImg}}' mode='aspectFill'></image>
+    </view> -->
+    <view class='add-photo-box'>
+      <image mode='aspectFill' src='{{upLoadImg}}' bindtap='loadImg'></image>
+    </view>
+    <!-- 地图操作 -->
+    <view class='choose-position-box'>
+      <button class='choose-button' type='{{button_type}}' bindtap='choose_position'>{{position}}</button>
+    </view>
+    <!--项目选择-->
+    <view class="tui-picker-content">
+      <text>*学校：</text>
+      <view class='piker-box'>
+        <picker bindchange='bindClassifyPiker3' style="width:200px" value='{{index}}' range='{{school}}'>
+          <view class='tui-picker-detail'>{{school[index3]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class='tui-picker-content'>
+      <text>*日期：</text>
+      <view class='piker-box'>
+        <picker style="width:200px" bindchange='bindClassifyPiker0' value='{{index}}' range='{{date}}'>
+          <view class='tui-picker-detail'>{{date[index0]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class='tui-picker-content'>
+      <text>*时段：</text>
+      <view class='piker-box'>
+        <picker style="width:200px" mode='time' start='06:00' end='22:30' bindchange='bindClassifyPiker1' value='{{time}}'>
+          <view class='tui-picker-detail'>{{time}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="tui-picker-content">
+      <text>*项目：</text>
+      <view class='piker-box'>
+        <picker bindchange='changeEquipment' style="width:200px" value="{{index}}" range="{{equipmentList}}">
+          <view class="tui-picker-detail">{{equipmentList[equipmentIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    <!--备注信息-->
+    <view class="tui-picker-content">
+      <text>*QQ：</text>
+      <input class="textInput" style='text-align:center' placeholder='添加QQ' placeholder-class='center' confirm-type="done" bindinput='phoneInput'></input>
+    </view>
+    <view class="tui-picker-content">
+      <text>*备注：</text>
+      <input class="textInput" style='text-align:center' placeholder='运动备注或宣言'  placeholder-class='center' confirm-type="done" bindinput='textInput'></input>
+    </view>
+    <!--用户确认-->
+    <button type='primary' class="button" bindtap='userconfirm'>确认上传</button>
+  </view>
+</view>

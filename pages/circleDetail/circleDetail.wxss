@@ -1,0 +1,232 @@
+/* miniprogram/pages/circleDetail/circleDetail.wxss */
+page {
+  background: #f4f4f4;
+    height: 100%;
+    font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yachei',
+                 sans-serif;
+}
+.top-center{
+  display: flex;
+  justify-content: center;
+}
+.top-radius-box{
+  position: absolute;
+  top: 48px;
+  background: white;
+  border-radius: 10px;
+}
+.top{
+  height: 140px;
+  background: #00ced1;
+  width: 100%;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+.top-bar{
+  /* position: absolute; */
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.top-bar image{
+  width: 22px;
+  height: 20px;
+  margin-left: 20px;
+}
+.top-bar .num-likes{
+  font-size: 70%;
+  font-weight: bold;
+  margin: 10px;
+  color: gray;
+}
+.whole-page{
+  margin-bottom: 47px;
+  background: white;
+  margin-top: 10px;
+}
+.top-box{
+  /* margin-top: 80px; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+  align-items: center;
+  /* text-align: center; */
+}
+.top-box image{
+  height: 35px;
+  width: 35px;
+  box-shadow: 0px 0px 12px 1px gainsboro;
+  margin-left: 10px;
+  margin-top:10px;
+  border-radius: 100%;
+}
+.nick-time-box{
+  /* height: 50px; */
+  margin-top: 10px;
+  margin-left: 5px;
+  /* display: flex;
+  flex-direction: colunm;
+  align-items: center; */
+}
+.nick-time-box .nickName{
+  font-size: 70%;
+  font-weight: bold;
+  color: black;
+}
+.nick-time-box .time{
+  font-size: 60%;
+  color: gray;
+}
+.record-button{
+  margin-left: 130px;
+  margin-top: 5px;
+  height: 25px;
+  padding:2px 12px;
+  font-size: 12px;
+  background: green;
+  color: #fff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.position-box{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  margin-left: 20px;
+  padding-bottom: 5px;
+}
+.position-box image{
+  border-radius: 5px;
+  border:1px solid gainsboro;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid gainsboro;
+}
+.position-box .position-name{
+  font-size: 80%;
+  font-weight: bold;
+  color: gray;
+  padding-bottom: 5px;
+  margin-left: 5px;
+  border-bottom: 1px solid gainsboro;
+}
+.text-box{
+  display: flex;
+  /* justify-content: center; */
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 20px;
+  border-top: 0.5px solid #f4f4f4; 
+}
+.text-box text{
+  font-size: 90%;
+  color: black;
+  font-weight: bolder;
+}
+.bind{
+  margin-top: 3px;
+  height: 10px;
+  background: #f4f4f4;
+}
+.image-box{
+  margin-top: 5px;
+  width: 94%;
+  display: flex;
+  margin: 15px auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.image-box image{
+  margin-top: 3px;
+  /* width: 115px;
+  height: 115px; */
+  border-radius: 4px;
+  border: 1px solid gainsboro;
+}
+.leave-message-title{
+  height: 25px;
+  background: #f4f4f4;
+  /* margin-top: 5px; */
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.leave-message-title .message-title{
+  font-size: 90%;
+  font-weight: bold;
+  color: black;
+}
+.message-box{
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.single-message{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gainsboro;
+}
+.single-message .message-nick-time-box{
+  margin-left: 5px;
+}
+.message-nick-time-box .message_nickName{
+  font-size: 60%;
+  font-weight: bold;
+  color: gray;
+}
+.message-nick-time-box .nowTime{
+  font-size: 60%;
+  margin-top: 3px;
+  font-weight: bold;
+  color: gainsboro;
+}
+.message_avatarUrl image{
+  height:35px;
+  width: 35px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 100%;
+}
+.message{
+  font-size: 80%;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+/* 留言操作样式 */
+.leave-message{
+  border-top: 1px solid gainsboro;
+  width: 100%;
+  height: 46px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0px;
+}
+.leave-message button{
+  /* margin-top: 8px; */
+  width: 100px;
+  margin-left: 16px;
+  height: 36px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  margin-right: 5px;
+  font-size: 90%;
+}
+.leave-message input{
+  margin-top: 14px;
+  margin-left: 10px;
+  margin-right: 20px;
+  border-bottom: 1px solid gainsboro;
+}

@@ -1,0 +1,61 @@
+<!--miniprogram/pages/circleDetail/circleDetail.wxml-->
+<view class='top'></view>
+<view class='whole-page'>
+  <!-- 顶部 -->
+  <view class='top-center'>
+    <view class='top-radius-box' style='width:{{top_width * 0.95}}px'>
+      <view class='top-bar' bindtap='add_likes'>
+        <image src='{{like_image}}'></image>
+        <view class='num-likes'>{{num_likes}}</view>
+      </view>
+      <view class='top-box'>
+        <image src='{{avataUrl}}'></image>
+        <view class='nick-time-box'>
+          <view class='nickName'>{{nickName}}</view>
+          <view class='time'>{{time}}</view>
+        </view>
+        <view style='background:{{button_color}}' class='record-button' bindtap='add_record'>{{bool_record}}</view>
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" style='height:{{whole_page_height}}px; margin-top:5px'>
+    <!-- motto -->
+    <view class='text-box'>
+      <text>#{{motto}}#</text>
+    </view>
+    <!-- 位置 -->
+    <view class='position-box'>
+      <image src='{{position_img}}'></image>
+      <view class='position-name'>{{positionName}}</view>
+    </view>
+    <view class='bind'></view>
+    <!-- 图片 -->
+    <view class='image-box'>
+      <block wx:for="{{sports_image}}">
+        <image style='height:{{img_height}}px; width:{{img_height}}px' mode='aspectFill' src="{{item}}" bindtap='loadImg'></image>
+      </block>
+    </view>
+    <!-- 留言 -->
+    <view class='leave-message-title'>
+      <view class='message-title'>留言：({{message_length}})</view>
+    </view>
+    <view class='message-box'>
+      <block wx:for='{{message_item}}'>
+        <view class='single-message'>
+          <view class='message_avatarUrl'>
+            <image src='{{item.message_avatarUrl}}'></image>
+          </view>
+          <view class='message-nick-time-box'>
+            <view class='message_nickName'>{{item.message_nickName}}</view>
+            <view class='nowTime'>{{item.nowTime}}</view>
+          </view>
+          <view class='message'>{{item.message_text}}</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<view class='leave-message'>
+  <button class='label-button' type='primary' bindtap='leave_message_button'>留言</button>
+  <input class='message-input' bindinput='leave_message' placeholder='说点什么吧！' placeholder-style='color:gray' value="{{input_message}}"></input>
+</view>

@@ -1,0 +1,42 @@
+<!--miniprogram/pages/sportTips/sportTips.wxml-->
+<view class='top'></view>
+<view class='top-navigation'>
+  <view class='{{open0?["before-sport"]:["else-before-sport"]}}' bindtap='before_sport'>热身</view>
+  <view class='{{open1?["sport-tips"]:["else-sport-tips"]}}' bindtap='sport_tips'>运动</view>
+  <view class='{{open2?["rest-tips"]:["else-rest-tips"]}}' bindtap='rest_tips'>休息</view>
+</view>
+<view class='tips-box' style='width:{{item_width}}px'>
+  <view>
+    <block wx:for="{{tips}}">
+      <view class='per-text' bindtap='text_detail' style='width:{{item_width * 0.95}}px' id='{{item._id}}'>
+        <view class='time-glance'>
+          <view class='time' style='margin-left:20px; color:gray;'>{{item.time}}</view>
+          <view style='margin-left:20px; color:#00ced1;'>浏览| {{item.glance}}</view>
+        </view>
+        <view class='title' style='margin-left:30px;'>{{item.title}}</view>
+        <view class='author-box'>
+          <view class='from' style='margin-left:20px;'>
+            <text>来自:@</text>
+          </view>
+          <view class='author'>
+            <text>{{item.author}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 发表动态弹窗 -->
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<!-- 弹出层 -->
+<view class="modalDlg" wx:if="{{showModal}}" style='height:{{text_height}}px;'>
+  <view class='detail-box'>
+    <view class='detail-title'>{{title}}</view>
+    <view class='detail-author'>by{{author}}</view>
+    <scroll-view scroll-y="true" style='height:{{text_height*0.68}}px'>
+      <view class='detail-text'>{{text}}</view>
+    </scroll-view>
+  </view>
+  <view bindtap="confirm" class="ok">我知道了</view>
+</view>

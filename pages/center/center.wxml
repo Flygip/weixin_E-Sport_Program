@@ -1,0 +1,54 @@
+<!--miniprogram/pages/center/center.wxml-->
+<!-- <view class='center-page'>
+  <image src='../image/center_page.jpg'></image>
+</view> -->
+<view class='top'></view>
+<view class='whole-page'>
+  <view class='hole-page'>
+    <view class='image-box'>
+      <image class='image' src='{{avatarUrl}}'></image>
+    </view>
+    <view class='nick-name'>
+      <text>{{nickName}}</text>
+    </view>
+    <!-- <view class="button-box">
+      <button class='button' plain open-type='getUserInfo' bindgetuserinfo='getUserInfo'>{{button_text}}</button>
+    </view> -->
+    <view class='label'>
+      <view class='deal-label' bindtap='makeDeal' style='background-color:{{color1}}'>
+        <image src='../image/hands.jpg'></image>
+        <text>伙伴招募</text>
+      </view>
+      <view class='partner-label' bindtap='findPartner'>
+        <image src='../image/match.jpg'></image>
+        <text>发布比赛</text>
+      </view>
+    </view>
+    <view class='label-one'>
+      <view class='record-label' bindtap='lookRecord'>
+        <image src='../image/e.jpg'></image>
+        <text>我的足迹</text>
+      </view>
+      <view class='my_publish' bindtap='my_publish'>
+        <image src='../image/start.jpg'></image>
+        <text>我的发布</text>
+      </view>
+      <!-- <view class='info-label' bindtap='showInfo' style='background-color:{{color1}}'>
+      <image src='../image/info.jpg'></image>
+      <text>我的收藏</text>
+    </view> -->
+    </view>
+    <view class='label-two'>
+      <view class='feedback' style='width:{{item_width * 0.93}}px'>
+        <button plain style='width:{{item_width * 0.93}}px' class='feedback-button' open-type='feedback'>
+            <image src='../image/feedbackimg.jpg'></image>
+            <text>意见反馈</text>
+        </button>
+      </view>
+      <view class='user-tips' bindtap='showTips'>
+        <image mode='aspectFill' src='../image/tips.jpg'></image>
+        <text>指南</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<!--miniprogram/pages/findpartner/findpartner.wxml-->
+<view class='whole-page'>
+  <view class='bg-img-box'>
+    <image src='../image/match_img.jpg'></image>
+  </view>
+  <view class='bottom-page'>
+    <view class='add-photo-box'>
+      <image mode='aspectFill' src='{{upLoadImg}}' bindtap='loadImg'></image>
+    </view>
+
+    <view class="tui-picker-content">
+      <text>*学校：</text>
+      <view class='piker-box'>
+        <picker bindchange='bindClassifyPiker0' style="width:200px" value='{{index}}' range='{{school}}'>
+          <view class='tui-picker-detail'>{{school[index0]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="tui-picker-content">
+      <text>*项目：</text>
+      <input class="textInput" placeholder='项目名称' style='text-align:center' placeholder-style='text-align:center' confirm-type="done" bindinput='typeInput'></input>
+    </view>
+
+    <view class='tui-picker-content'>
+      <text>*日期：</text>
+      <view class='piker-box'>
+        <picker style="width:200px" bindchange='bindClassifyPiker1' value='{{index}}' range='{{date}}'>
+          <view class='tui-picker-detail'>{{date[index1]}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class='tui-picker-content'>
+      <text>*时段：</text>
+      <view class='piker-box'>
+        <picker style="width:200px" mode='time' start='06:00' end='22:30' bindchange='bindClassifyPiker2' value='{{time}}'>
+          <view class='tui-picker-detail'>{{time}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!--备注信息-->
+    <view class="tui-picker-content">
+      <text>*QQ：</text>
+      <input class="textInput" placeholder-style='text-align:center' placeholder='添加QQ' style='text-align:center' confirm-type="done" bindinput='phoneInput'></input>
+    </view>
+    <view class="tui-picker-content">
+      <text>*人数：</text>
+      <input class="textInput" style='text-align:center' placeholder-style='text-align:center' placeholder='添加人数' confirm-type="done" bindinput='peopleInput'></input>
+    </view>
+
+    <view class='all-input'>
+      <view class='textarea-box'>
+        <text>备注</text>
+        <textarea style='height:80px;' value='' placeholder='添加备注!' bindinput='getLabel'></textarea>
+      </view>
+    </view>
+    <button type='primary' class='submit-button' bindtap='submit'>提交</button>
+  </view>
+</view>

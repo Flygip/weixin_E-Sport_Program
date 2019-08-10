@@ -1,0 +1,318 @@
+/* miniprogram/pages/tologin/tologin.wxss */
+page {
+  background: #f5f5f5;
+  height: 100%;
+  font-family: 'PingFang SC',
+                 'Helvetica Neue',
+                 Helvetica,
+                 'Droid Sans Fallback',
+                 'Microsoft Yachei',
+                 sans-serif;
+}
+.swiper-item {
+  /* margin-top: 18px; */
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-item image {
+  height: 100%;
+  width: 100%;
+}
+.page-state {
+  /* transform: rotate(0deg) scale(1) translate(10%,0%);  
+ -webkit-transform: rotate(0deg) scale(1) translate(10%,0%); */
+}
+
+.bind {
+  height: 10px;
+  width: 100%;
+  background: gainsboro;
+}
+
+/* 侧边导航栏 */
+
+.nav-left {
+  display: inline-block;
+  width: 22%;
+  height: 100%;
+  background: white;
+  text-align: center;
+}
+
+.nav-left .nav-left-items {
+  height: 20px;
+  line-height: 20px;
+  padding: 6px;
+  border-bottom: 1px solid #fff;
+  font-size: 14px;
+  background: white;
+}
+
+.nav-left .nav-left-items.active {
+  background: #e0ffff;
+  height: 20px;
+  line-height: 20px;
+  margin: 6px;
+  color: #00ced1;
+  border-radius: 20px;
+  font-weight: bold;
+  /* border-bottom: 3px solid green; */
+  font-size: 14px;
+}
+
+.hole-page {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #f5f5f5;
+}
+/* 收藏条目 */
+.tips {
+  /* margin-top: 100px; */
+  display: flex;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  align-items: center;
+  padding: 10px auto;
+  justify-content: center;
+  margin: 50px auto;
+  background: white;
+  color: orange;
+  border: 1px solid orange;
+}
+
+.content {
+  /* margin-left: 161rpx; */
+  margin-top: 5px;
+  width: 78%;
+  /* margin-bottom: 10px; */
+  background-color: #f5f5f5;
+  /* border-left: 1px solid #eee; */
+}
+
+.per-people {
+  display: flex;
+  height: 100px;
+  flex-direction: row;
+  /* margin-left: 200px; */
+  background: white;
+  border: 1px solid white;
+  margin-left: 5px;
+  margin-right: 5px;
+  /* margin-top: 6px; */
+  border-bottom: 0.5px solid gainsboro;
+  /* border-top-left-radius: 10px; *//* box-shadow: 0px 0px 10px 2px gainsboro; */
+}
+
+/* 图片box */
+
+.img {
+  width: 40px;
+  height: 40px;
+  
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 10px 2px  gainsboro; */
+}
+
+.img-box {
+  margin-top: 5px;
+  margin-left: 5px;
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+
+/* 信息栏 */
+
+.introduce_text {
+  height: 100px;
+  /* width: 410rpx; */
+  margin-top: 5px;
+  font-size: 90%;
+  color: black;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+}
+
+.nike-name {
+  margin-top: 5rpx;
+  margin-left: 8px;
+  color: black;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.type {
+  font-size: 70%;
+  margin-left: 15px;
+  margin-top: 8rpx;
+  color: #4d4dff;
+}
+
+.position {
+  margin-left: -35px;
+  margin-top: 15px;
+  font-size: 70%;
+}
+
+.detail-img-box {
+  margin-top: 5px;
+  margin-right: 5px;
+  height: 90px;
+  width: 100%;
+  display: felx;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.detail-img {
+  margin-top: 5px;
+  /* margin-left: 5px; */
+  width: 90px;
+  height: 90px;
+  box-shadow: 0px 0px 10px 2px gainsboro;
+}
+
+.publish-time {
+  position: absolute;
+  margin-top: 80px;
+  font-size: 80%;
+  left: 18px;
+}
+
+.publish-time text {
+  font-size: 80%;
+  color: gray;
+}
+
+.normal-appointment {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 40px;
+  height: 130px;
+  font-size: 90%;
+  background-color: orange;
+  color: black;
+}
+
+.select-appointment {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 40px;
+  height: 130px;
+  font-size: 90%;
+  background-color: gainsboro;
+  color: black;
+}
+
+.normal-appointment view {
+  width: 25px;
+}
+
+.select-appointment view {
+  width: 25px;
+}
+/* 弹窗样式 */
+
+/* 遮罩层 */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.5;
+}
+
+/* 弹出层 */
+
+.modalDlg {
+  width: 70%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 弹出层里面的图片 */
+
+.modalDlg image {
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+}
+
+/* 弹出层里面的按钮 */
+
+.ok {
+  width: 80px;
+  height: 35px;
+  background: #44b549;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin: 20px auto;
+  border-radius: 100px;
+}
+
+/* 弹出层里面的文字 */
+
+.text1 {
+  text-align: justify;
+  font-size: 14px;
+  color: #666;
+  width: 180px;
+  margin-top: 10px;
+}
+.cancle{
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  top:11px;
+  left: 22px;
+  border-radius: 100%;
+}
+.cancle image{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+/*预约按钮*/
+
+.appoint-button {
+  position: absolute;
+  right: 15px;
+  /* top:50px; */
+  margin-top: 55px;
+}
+
+.appoint-button button {
+  font-size: 14px;
+}
